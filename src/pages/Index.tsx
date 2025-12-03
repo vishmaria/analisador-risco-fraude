@@ -54,18 +54,56 @@ const Index = () => {
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
-    // Mock API call - replace with actual n8n webhook
-    setTimeout(() => {
+    try {
+      // Substitua pela URL real do seu webhook n8n
+      const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/analisador-risco";
+      
+      const response = await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({ 
+          message: messageText 
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      
+      // Extrai resposta do n8n (ajuste conforme output do seu workflow)
+      const analysisResult = data.result?.message || 
+                            data.message || 
+                            data.analysis || 
+                            JSON.stringify(data, null, 2);
+
       const systemMessage: Message = {
         id: (Date.now() + 1).toString(),
-        message: "Analisando sua solicitação... Esta é uma resposta de exemplo. Integre com sua API n8n para obter dados reais.",
+        message: `Análise concluída:\n\n${analysisResult}`,
         type: "system",
-        riskLevel: Math.random() > 0.5 ? "low" : "medium",
-        timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
+        riskLevel: data.riskLevel || data.risk_score?.level || "low",
+        timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
       };
+
       setMessages((prev) => [...prev, systemMessage]);
+    } catch (error) {
+      console.error("Erro na integração n8n:", error);
+      
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        message: `Erro na análise de risco: ${error.message || "Falha na conexão com o servidor"}. Verifique se o n8n está ativo e o webhook configurado corretamente.`,
+        type: "system",
+        riskLevel: "high",
+        timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+      };
+
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   if (!isAuthenticated) {
