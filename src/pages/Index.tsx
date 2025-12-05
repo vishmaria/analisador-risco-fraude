@@ -9,12 +9,13 @@ import LoginScreen from "@/components/LoginScreen";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface Message {
-  id: string;
+  id: string;                    // ✅ OBRIGATÓRIO
   message: string;
-  type: "user" | "system";
-  riskLevel?: "low" | "medium" | "high";
+  type: 'user' | 'system';       // ✅ Union type
+  riskLevel?: 'low' | 'medium' | 'high';  // ✅ Optional
   timestamp: string;
 }
+
 
 const Index = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,13 +45,14 @@ const Index = () => {
   };
 
   const handleSendMessage = async (messageText: string) => {
+    // 1. Mensagem do usuário
     const userMessage: Message = {
-      id: Date.now().toString(),
+      id: `user-${Date.now()}`,  // ✅ ID único
       message: messageText,
-      type: 'user',
-      timestamp: new Date().toLocaleTimeString('pt-BR', { 
-        hour: '2-digit', 
-        minute: '2-digit' 
+      type: 'user' as const,
+      timestamp: new Date().toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit'
       })
     };
     
@@ -58,7 +60,7 @@ const Index = () => {
     setIsLoading(true);
     
     try {
-      // ✅ CHAMA SEU WEBHOOK N8N
+      // 2. Chamar n8n webhook
       const N8N_WEBHOOK = 'http://localhost:5678/webhook/fraud-pipeline';
       
       const response = await fetch(N8N_WEBHOOK, {
@@ -66,46 +68,53 @@ const Index = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           message: messageText,
-          pipeline: 'fraud-analysis'  // Identifica origem
+          pipeline: 'fraud-analysis'
         })
       });
       
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
       
       const data = await response.json();
       
-      // ✅ FORMATO COMPATÍVEL COM ChatMessage.tsx
+      // 3. Mensagem do sistema COM ID OBRIGATÓRIO ✅
       const systemMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        message: data.message || data.analysis || 'Análise concluída',
-        type: 'system',
-        riskLevel: data.riskLevel || 'medium',  // low/medium/high
-        timestamp: new Date().toLocaleTimeString('pt-BR', { 
-          hour: '2-digit', 
-          minute: '2-digit' 
+        id: `system-${Date.now()}`,  // ✅ RESOLVIDO!
+        message: data.message || data.analysis || 'Análise concluída!',
+        type: 'system' as const,
+        riskLevel: (data.riskLevel as 'low' | 'medium' | 'high') || 'medium',
+        timestamp: data.timestamp || new Date().toLocaleTimeString('pt-BR', {
+          hour: '2-digit',
+          minute: '2-digit'
         })
       };
       
       setMessages(prev => [...prev, systemMessage]);
-      toast.success('✅ Análise concluída!');
+      toast.success('✅ Análise de risco concluída!');
       
     } catch (error) {
       console.error('Erro n8n:', error);
+      
+      // 4. Erro também COM ID
       const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        message: `❌ Erro: ${error.message}\n\nVerifique se n8n está ativo em localhost:5678`,
-        type: 'system',
-        riskLevel: 'high',
-        timestamp: new Date().toLocaleTimeString('pt-BR', { 
-          hour: '2-digit', 
-          minute: '2-digit' 
+        id: `error-${Date.now()}`,  // ✅ ID obrigatório
+        message: `❌ Erro na análise:\n${error instanceof Error ? error.message : 'Falha desconhecida'}\n\n💡 Verifique se n8n está ativo (localhost:5678)`,
+        type: 'system' as const,
+        riskLevel: 'high' as const,
+        timestamp: new Date().toLocaleTimeString('pt-BR', {
+          hour: '2-digit',
+          minute: '2-digit'
         })
       };
+      
       setMessages(prev => [...prev, errorMessage]);
+      toast.error('Erro na conexão com n8n');
     } finally {
       setIsLoading(false);
     }
   };
+
 
 
   if (!isAuthenticated) {
