@@ -47,64 +47,66 @@ const Index = () => {
     const userMessage: Message = {
       id: Date.now().toString(),
       message: messageText,
-      type: "user",
-      timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
+      type: 'user',
+      timestamp: new Date().toLocaleTimeString('pt-BR', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+      })
     };
-
-    setMessages((prev) => [...prev, userMessage]);
+    
+    setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
-
+    
     try {
-      // Substitua pela URL real do seu webhook n8n
-      const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/analisador-risco";
+      // ✅ CHAMA SEU WEBHOOK N8N
+      const N8N_WEBHOOK = 'http://localhost:5678/webhook/fraud-pipeline';
       
-      const response = await fetch(N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json" 
-        },
+      const response = await fetch(N8N_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          message: messageText 
+          message: messageText,
+          pipeline: 'fraud-analysis'  // Identifica origem
         })
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
+      
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
       const data = await response.json();
       
-      // Extrai resposta do n8n (ajuste conforme output do seu workflow)
-      const analysisResult = data.result?.message || 
-                            data.message || 
-                            data.analysis || 
-                            JSON.stringify(data, null, 2);
-
+      // ✅ FORMATO COMPATÍVEL COM ChatMessage.tsx
       const systemMessage: Message = {
         id: (Date.now() + 1).toString(),
-        message: `Análise concluída:\n\n${analysisResult}`,
-        type: "system",
-        riskLevel: data.riskLevel || data.risk_score?.level || "low",
-        timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+        message: data.message || data.analysis || 'Análise concluída',
+        type: 'system',
+        riskLevel: data.riskLevel || 'medium',  // low/medium/high
+        timestamp: new Date().toLocaleTimeString('pt-BR', { 
+          hour: '2-digit', 
+          minute: '2-digit' 
+        })
       };
-
-      setMessages((prev) => [...prev, systemMessage]);
-    } catch (error) {
-      console.error("Erro na integração n8n:", error);
       
+      setMessages(prev => [...prev, systemMessage]);
+      toast.success('✅ Análise concluída!');
+      
+    } catch (error) {
+      console.error('Erro n8n:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        message: `Erro na análise de risco: ${error.message || "Falha na conexão com o servidor"}. Verifique se o n8n está ativo e o webhook configurado corretamente.`,
-        type: "system",
-        riskLevel: "high",
-        timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+        message: `❌ Erro: ${error.message}\n\nVerifique se n8n está ativo em localhost:5678`,
+        type: 'system',
+        riskLevel: 'high',
+        timestamp: new Date().toLocaleTimeString('pt-BR', { 
+          hour: '2-digit', 
+          minute: '2-digit' 
+        })
       };
-
-      setMessages((prev) => [...prev, errorMessage]);
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
   };
+
 
   if (!isAuthenticated) {
     return <LoginScreen onLogin={handleLogin} />;
