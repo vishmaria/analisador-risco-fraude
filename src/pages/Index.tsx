@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Shield, LogOut } from "lucide-react";
+import { Shield, LogOut, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import ChatMessage from "@/components/ChatMessage";
@@ -18,9 +19,14 @@ interface Message {
 
 
 const Index = () => {
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   const handleLogin = (email: string, password: string) => {
     // Mock authentication - replace with actual API call
@@ -127,6 +133,14 @@ const Index = () => {
       <header className="bg-card border-b border-border shadow-card">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleGoBack}
+              className="hover:bg-muted"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </Button>
             <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow">
               <Shield className="w-6 h-6 text-primary-foreground" />
             </div>
