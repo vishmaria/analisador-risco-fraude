@@ -68,7 +68,8 @@ const Index = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           message: messageText,
-          pipeline: 'fraud-analysis'
+          pipeline: 'fraud-analysis',
+          source:'quick-actions'
         })
       });
       
