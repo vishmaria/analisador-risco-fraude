@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, Shield, Database, Cpu, MessageSquare, GitBra
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
+import demoChat from "@/assets/demo-chat.png";
+import demoAnalysis from "@/assets/demo-analysis.png";
+import demoTransaction from "@/assets/demo-transaction.png";
 interface Slide {
   id: number;
   title: string;
@@ -253,9 +256,51 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 7 - Métricas
+  // Slide 7 - Demo: Formulário de Transação
   {
     id: 7,
+    title: "Demonstração: Nova Transação",
+    subtitle: "Formulário de análise de risco",
+    content: <div className="flex flex-col items-center gap-6 animate-fade-in">
+          <img 
+            src={demoTransaction} 
+            alt="Formulário de Nova Transação" 
+            className="rounded-xl border border-slate-200 shadow-xl max-w-full max-h-[400px] object-contain"
+          />
+          <p className="text-sm text-slate-500 text-center">Formulário intuitivo para submissão de transações com campos estruturados</p>
+        </div>
+  },
+  // Slide 8 - Demo: Resultado da Análise
+  {
+    id: 8,
+    title: "Demonstração: Análise Concluída",
+    subtitle: "Resultado detalhado da análise de risco",
+    content: <div className="flex flex-col items-center gap-6 animate-fade-in">
+          <img 
+            src={demoAnalysis} 
+            alt="Resultado da Análise de Transação" 
+            className="rounded-xl border border-slate-200 shadow-xl max-w-full max-h-[400px] object-contain"
+          />
+          <p className="text-sm text-slate-500 text-center">Resposta detalhada com probabilidade de fraude, classificação e nível de risco</p>
+        </div>
+  },
+  // Slide 9 - Demo: Chat Interativo
+  {
+    id: 9,
+    title: "Demonstração: Chat Interativo",
+    subtitle: "Consultas em linguagem natural",
+    content: <div className="flex flex-col items-center gap-6 animate-fade-in">
+          <img 
+            src={demoChat} 
+            alt="Chat Interativo do Analisador" 
+            className="rounded-xl border border-slate-200 shadow-xl max-w-full max-h-[400px] object-contain"
+          />
+          <p className="text-sm text-slate-500 text-center">Interface de chat para perguntas sobre score de risco e informações do dataset</p>
+        </div>
+  },
+  // Slide 10 - Métricas
+  {
+    id: 10,
     title: "Resultados da Validação",
     subtitle: "Métricas do Modelo Final",
     content: <div className="space-y-6 animate-fade-in">
@@ -299,9 +344,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 8 - Conclusão
+  // Slide 11 - Conclusão
   {
-    id: 8,
+    id: 11,
     title: "Conclusão e Próximos Passos",
     subtitle: "Roadmap do Projeto",
     content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
@@ -355,9 +400,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 9 - Obrigada
+  // Slide 12 - Obrigada
   {
-    id: 9,
+    id: 12,
     title: "Obrigada!",
     subtitle: "Perguntas?",
     content: <div className="flex flex-col items-center gap-8 animate-fade-in">
