@@ -140,7 +140,8 @@ const Presentation = () => {
                 <Zap className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-bold text-slate-800 mb-2">Auditável</h3>
-              <p className="text-sm text-slate-600">Informações transparentes para validadação humana.</p> 
+              <p className="text-sm text-slate-600">Informações transparentes para validação humana.</p>
+            </div>
             <div className="p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-green-600 flex items-center justify-center mb-4">
                 <Target className="w-8 h-8 text-white" />
