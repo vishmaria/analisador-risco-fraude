@@ -53,6 +53,7 @@ const Presentation = () => {
           </div>
           <div className="mt-8 px-6 py-3 rounded-full bg-slate-100 border border-slate-200">
             <p className="text-sm text-slate-600">Maria Fernanda Bittelbrunn Toniasso</p>
+            <p className="text-sm text-slate-600">Matheus de Oliveira Saldanha</p>
           </div>
         </div>
       ),
