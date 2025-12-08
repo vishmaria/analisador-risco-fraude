@@ -23,7 +23,7 @@ const Presentation = () => {
             <Shield className="w-14 h-14 text-white" />
           </div>
           <div className="text-center space-y-2">
-            <p className="text-xl text-slate-600">Sistema de Detecção em Tempo Real</p>
+            <p className="text-xl text-slate-600">Detectar fraudes antes que causem prejuízos irreversíveis</p>
             <p className="text-lg text-slate-500">Baseado em Machine Learning + LLM</p>
           </div>
           <div className="mt-8 flex flex-col items-center gap-3">
