@@ -67,7 +67,7 @@ const Presentation = () => {
           </div>
           <div className="p-5 rounded-xl bg-amber-50 border border-amber-200">
             <p className="text-center text-amber-800">
-              <strong>Desafio:</strong> Detectar fraudes em tempo real antes que causem prejuízos irreversíveis
+              <strong>Desafio:</strong> Detectar fraudes antes que causem prejuízos irreversíveis
             </p>
           </div>
         </div>
@@ -121,16 +121,13 @@ const Presentation = () => {
             </h3>
             <div className="space-y-3">
               <div className="p-4 rounded-lg bg-green-50 border border-green-200">
-                <p className="text-sm text-slate-700"><strong>Interface em Português:</strong> Sistema 100% em português brasileiro, facilitando adoção pela equipe</p>
+                <p className="text-sm text-slate-700"><strong>Interface compacta:</strong> Sistema leve e simplificado para fácil adoção</p>
               </div>
               <div className="p-4 rounded-lg bg-green-50 border border-green-200">
-                <p className="text-sm text-slate-700"><strong>Chat Inteligente:</strong> Pergunte sobre transações como se estivesse conversando com um especialista</p>
+                <p className="text-sm text-slate-700"><strong>Chat Inteligente:</strong> Pergunte sobre transações em linguagem natural.</p>
               </div>
               <div className="p-4 rounded-lg bg-green-50 border border-green-200">
-                <p className="text-sm text-slate-700"><strong>Indicadores Visuais:</strong> Cores claras indicam nível de risco (verde, amarelo, vermelho)</p>
-              </div>
-              <div className="p-4 rounded-lg bg-green-50 border border-green-200">
-                <p className="text-sm text-slate-700"><strong>Ações Rápidas:</strong> Botões para consultas frequentes, agilizando o dia a dia</p>
+                <p className="text-sm text-slate-700"><strong>Ações Rápidas:</strong> Botões para consultas frequentes</p>
               </div>
             </div>
           </div>
@@ -212,7 +209,7 @@ const Presentation = () => {
                 <h4 className="font-semibold text-slate-800">Autenticação</h4>
               </div>
               <p className="text-sm text-slate-600">
-                Tela de login seguro com validação de credenciais
+                Tela de login
               </p>
             </div>
             <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
@@ -250,16 +247,7 @@ const Presentation = () => {
                 <h4 className="font-semibold text-slate-800">Indicadores de Risco</h4>
               </div>
               <p className="text-sm text-slate-600">
-                Cores visuais: verde (baixo), amarelo (médio), vermelho (alto)
-              </p>
-            </div>
-            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-                <h4 className="font-semibold text-slate-800">Histórico de Mensagens</h4>
-              </div>
-              <p className="text-sm text-slate-600">
-                Contexto da sessão com timestamps
+                Probabilidade de fraude: alta, média, baixa
               </p>
             </div>
           </div>
@@ -307,10 +295,6 @@ const Presentation = () => {
                 <span className="text-slate-600">Modelo: </span>
                 <span className="font-semibold text-slate-800">LightGBM</span>
               </div>
-              <div className="px-4 py-2 rounded-lg bg-green-100">
-                <span className="text-slate-600">Status: </span>
-                <span className="font-semibold text-green-700">Pronto para Deploy</span>
-              </div>
             </div>
           </div>
         </div>
@@ -352,7 +336,7 @@ const Presentation = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-amber-600" />
-              Próximos Passos
+              Melhorias possíveis
             </h3>
             <ul className="space-y-2 text-slate-600">
               <li className="flex items-start gap-2">
@@ -361,19 +345,11 @@ const Presentation = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-slate-400">○</span>
-                Sistema de alertas automatizados
+                Sistema de alertas integrado a sistema bancário
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-slate-400">○</span>
-                Dashboard de monitoramento
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-slate-400">○</span>
-                Autenticação robusta com OAuth
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-slate-400">○</span>
-                Análise de documentos com LLM
+                Modelo LLM local e customizável.
               </li>
             </ul>
           </div>
