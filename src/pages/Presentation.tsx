@@ -48,14 +48,14 @@ const Presentation = () => {
                 <DollarSign className="w-8 h-8 text-red-600" />
               </div>
               <p className="text-3xl font-bold text-slate-800">R$ 29 bi</p>
-              <p className="text-sm text-slate-500 mt-2">Perdas anuais estimadas com fraudes digitais no Brasil</p>
+              <p className="text-sm text-slate-500 mt-2">Prejuízo apenas com fraudes de Pix e boleto</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-4">
                 <TrendingUp className="w-8 h-8 text-orange-600" />
               </div>
-              <p className="text-3xl font-bold text-slate-800">+62%</p>
-              <p className="text-sm text-slate-500 mt-2">Aumento de tentativas de fraude nos últimos 2 anos</p>
+              <p className="text-3xl font-bold text-slate-800">24 mi</p>
+              <p className="text-sm text-slate-500 mt-2">De brasileiros foram vítimas de golpes financeiros (julho de 2024 a julho de 2025)</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-4">
@@ -122,7 +122,7 @@ const Presentation = () => {
                 <h4 className="font-semibold text-slate-800">Sobrecarga Operacional</h4>
               </div>
               <p className="text-sm text-slate-600">
-                Equipes sobrecarregadas com análises manuais que poderiam ser automatizadas.
+                Alto volume de transações e sistemas anti-fraude muito generalistas aumentam a possibilidade de erros.
               </p>
             </div>
           </div>
@@ -139,9 +139,8 @@ const Presentation = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-blue-600 flex items-center justify-center mb-4">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-slate-800 mb-2">Velocidade</h3>
-              <p className="text-sm text-slate-600">Análise em milissegundos, antes que a transação seja concluída</p>
-            </div>
+              <h3 className="font-bold text-slate-800 mb-2">Auditável</h3>
+              <p className="text-sm text-slate-600">Informações transparentes para validadação humana.</p> 
             <div className="p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-green-600 flex items-center justify-center mb-4">
                 <Target className="w-8 h-8 text-white" />
@@ -197,16 +196,13 @@ const Presentation = () => {
             </h3>
             <div className="space-y-3">
               <div className="p-4 rounded-lg bg-blue-50 border border-blue-200">
-                <p className="text-sm text-slate-700"><strong>Autenticação:</strong> Acesso protegido por login seguro</p>
+                <p className="text-sm text-slate-700"><strong>Autenticação:</strong> Acesso protegido por login.</p>
               </div>
               <div className="p-4 rounded-lg bg-blue-50 border border-blue-200">
-                <p className="text-sm text-slate-700"><strong>Dados Reais:</strong> Modelo treinado com +3.7 milhões de transações</p>
+                <p className="text-sm text-slate-700"><strong>Dados robustos:</strong> Modelo treinado com +2.5 milhões de transações</p>
               </div>
               <div className="p-4 rounded-lg bg-blue-50 border border-blue-200">
-                <p className="text-sm text-slate-700"><strong>Validado:</strong> Métricas comprovadas em dataset público do HuggingFace</p>
-              </div>
-              <div className="p-4 rounded-lg bg-blue-50 border border-blue-200">
-                <p className="text-sm text-slate-700"><strong>Escalável:</strong> Arquitetura pronta para crescer com sua operação</p>
+                <p className="text-sm text-slate-700"><strong>Auditoria de IA:</strong> Arquitetura possibilita monitorar resultados dos modelos para garantir confiabilidade no uso de IA.</p>
               </div>
             </div>
           </div>
