@@ -72,65 +72,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 3 - Impacto nas Empresas
+  // Slide 3 - Nossa Proposta de Valor
   {
     id: 3,
-    title: "O Impacto nas Empresas",
-    subtitle: "Muito além do prejuízo financeiro",
-    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
-          <div className="space-y-4">
-            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-red-600" />
-                </div>
-                <h4 className="font-semibold text-slate-800">Perdas Financeiras Diretas</h4>
-              </div>
-              <p className="text-sm text-slate-600">
-                Estornos, reembolsos e custos operacionais para investigação de cada caso suspeito.
-              </p>
-            </div>
-            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-orange-600" />
-                </div>
-                <h4 className="font-semibold text-slate-800">Perda de Confiança</h4>
-              </div>
-              <p className="text-sm text-slate-600">
-                Clientes afetados por fraudes tendem a abandonar a empresa e compartilhar experiências negativas.
-              </p>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                  <AlertTriangle className="w-5 h-5 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-slate-800">Riscos Regulatórios</h4>
-              </div>
-              <p className="text-sm text-slate-600">
-                Multas e sanções por não conformidade com normas de segurança e proteção de dados (LGPD, BACEN).
-              </p>
-            </div>
-            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-slate-800">Sobrecarga Operacional</h4>
-              </div>
-              <p className="text-sm text-slate-600">
-                Alto volume de transações e sistemas anti-fraude muito generalistas aumentam a possibilidade de erros.
-              </p>
-            </div>
-          </div>
-        </div>
-  },
-  // Slide 4 - Nossa Proposta de Valor
-  {
-    id: 4,
     title: "Nossa Proposta de Valor",
     subtitle: "Inteligência Artificial a favor da segurança",
     content: <div className="space-y-8 animate-fade-in">
@@ -164,9 +108,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 5 - Diferencial Competitivo
+  // Slide 4 - Diferencial Competitivo
   {
-    id: 5,
+    id: 4,
     title: "Por que este Projeto?",
     subtitle: "Diferenciais da nossa solução",
     content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
@@ -209,66 +153,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 6 - Dataset
+  // Slide 5 - Arquitetura
   {
-    id: 6,
-    title: "Base de Dados",
-    subtitle: "Fundamento sólido para decisões confiáveis",
-    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
-          <div className="space-y-6">
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <Database className="w-8 h-8 text-blue-600" />
-                <h3 className="text-xl font-semibold text-slate-800">Dataset HuggingFace</h3>
-              </div>
-              <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span><strong>3.713.576</strong> transações analisadas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span><strong>336.788</strong> fraudes identificadas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Base pública e auditável</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Padrão internacional de qualidade</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="space-y-6">
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <Eye className="w-8 h-8 text-indigo-600" />
-                <h3 className="text-xl font-semibold text-slate-800">Desafio do Desbalanceamento</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">
-                Apenas ~9% das transações são fraudes. Isso é um desafio comum no mundo real que exige técnicas especializadas.
-              </p>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Transações legítimas</span>
-                  <span className="font-mono text-slate-800">91%</span>
-                </div>
-                <Progress value={91} className="h-3" />
-                <div className="flex justify-between text-sm mb-1 mt-3">
-                  <span className="text-slate-600">Fraudes</span>
-                  <span className="font-mono text-slate-800">9%</span>
-                </div>
-                <Progress value={9} className="h-3" />
-              </div>
-            </div>
-          </div>
-        </div>
-  },
-  // Slide 7 - Arquitetura (Simplificada)
-  {
-    id: 7,
+    id: 5,
     title: "Como Funciona",
     subtitle: "Visão geral da arquitetura",
     content: <div className="space-y-8 animate-fade-in">
@@ -312,155 +199,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 8 - Pipeline n8n (Técnico)
+  // Slide 6 - Interface Implementada
   {
-    id: 8,
-    title: "Pipeline de Processamento",
-    subtitle: "Workflow n8n Implementado",
-    content: <div className="space-y-6 animate-fade-in">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm">1</span>
-                Recebimento (Webhook)
-              </h3>
-              <p className="text-sm text-slate-600">
-                Endpoint POST recebe mensagens da interface de chat e dados de transações estruturados.
-              </p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm">2</span>
-                Roteamento Inteligente
-              </h3>
-              <p className="text-sm text-slate-600">
-                Identifica se é análise de transação (ML) ou pergunta geral (LLM) via código JavaScript.
-              </p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm">3</span>
-                Processamento
-              </h3>
-              <p className="text-sm text-slate-600">
-                <strong>Transação:</strong> HTTP Request para API Python<br />
-                <strong>Pergunta:</strong> LLM Chain com Groq
-              </p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm">4</span>
-                Formatação UI
-              </h3>
-              <p className="text-sm text-slate-600">
-                Nó Code formata resposta com nível de risco, probabilidade e mensagem amigável.
-              </p>
-            </div>
-          </div>
-        </div>
-  },
-  // Slide 9 - Backend Python
-  {
-    id: 9,
-    title: "Serviço de Predição",
-    subtitle: "Backend Python + Docker",
-    content: <div className="space-y-6 animate-fade-in">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-                <h3 className="font-semibold text-slate-800 mb-3">🐍 Flask API</h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li>• Endpoint <code className="px-2 py-0.5 rounded bg-slate-100">/predict</code></li>
-                  <li>• Health check para monitoramento</li>
-                  <li>• Validação de campos obrigatórios</li>
-                </ul>
-              </div>
-              <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-                <h3 className="font-semibold text-slate-800 mb-3">🐳 Docker</h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li>• Imagem Python 3.11-slim</li>
-                  <li>• Dependências: Flask, scikit-learn, LightGBM</li>
-                  <li>• Healthcheck integrado</li>
-                </ul>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
-              <h3 className="font-semibold text-slate-800 mb-3">⚙️ Feature Engineering</h3>
-              <ul className="space-y-2 text-sm text-slate-600">
-                <li>• <strong>amount_high:</strong> Valor acima da média</li>
-                <li>• <strong>balance_suspicious:</strong> Saldo fora do IQR</li>
-                <li>• <strong>amount_balance_ratio:</strong> Relação valor/saldo</li>
-                <li>• <strong>log_amount:</strong> Log transformado</li>
-                <li>• <strong>One-hot encoding:</strong> Tipos de transação</li>
-              </ul>
-              <div className="mt-4 p-3 rounded-lg bg-slate-50">
-                <p className="text-xs text-slate-600">
-                  <strong>Threshold ótimo:</strong> 0.423 (otimizado no step 3)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-  },
-  // Slide 10 - Modelagem ML
-  {
-    id: 10,
-    title: "Modelagem Machine Learning",
-    subtitle: "Comparativo de Modelos",
-    content: <div className="space-y-6 animate-fade-in">
-          <div className="grid md:grid-cols-4 gap-4">
-            {[{
-          name: "Logistic",
-          auc: 0.82,
-          recall: 0.72
-        }, {
-          name: "Random Forest",
-          auc: 0.90,
-          recall: 0.80
-        }, {
-          name: "XGBoost",
-          auc: 0.92,
-          recall: 0.83
-        }, {
-          name: "LightGBM ⭐",
-          auc: 0.93,
-          recall: 0.85,
-          selected: true
-        }].map(model => <div key={model.name} className={`p-4 rounded-xl border shadow-lg ${model.selected ? 'bg-blue-50 border-blue-300' : 'bg-white border-slate-200'}`}>
-                <h4 className="font-semibold text-sm text-slate-800 mb-3">{model.name}</h4>
-                <div className="space-y-2">
-                  <div>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-slate-600">ROC-AUC</span>
-                      <span className="font-mono text-slate-800">{model.auc.toFixed(2)}</span>
-                    </div>
-                    <Progress value={model.auc * 100} className="h-2" />
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-slate-600">Recall</span>
-                      <span className="font-mono text-slate-800">{model.recall.toFixed(2)}</span>
-                    </div>
-                    <Progress value={model.recall * 100} className="h-2" />
-                  </div>
-                </div>
-              </div>)}
-          </div>
-          <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-lg">
-            <h4 className="font-semibold text-slate-800 mb-3">Metodologia</h4>
-            <div className="flex flex-wrap gap-2 text-sm text-slate-600">
-              <span className="px-3 py-1 rounded-full bg-slate-100">70% Treino</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">15% Teste</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">15% Validação</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">Class Weights</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">RobustScaler</span>
-            </div>
-          </div>
-        </div>
-  },
-  // Slide 11 - Interface Implementada
-  {
-    id: 11,
+    id: 6,
     title: "Interface Implementada",
     subtitle: "Funcionalidades Disponíveis no PoC",
     content: <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
@@ -524,9 +265,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 12 - Métricas
+  // Slide 7 - Métricas
   {
-    id: 12,
+    id: 7,
     title: "Resultados da Validação",
     subtitle: "Métricas do Modelo Final",
     content: <div className="space-y-6 animate-fade-in">
@@ -574,9 +315,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 13 - Conclusão
+  // Slide 8 - Conclusão
   {
-    id: 13,
+    id: 8,
     title: "Conclusão e Próximos Passos",
     subtitle: "Roadmap do Projeto",
     content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
@@ -638,9 +379,9 @@ const Presentation = () => {
           </div>
         </div>
   },
-  // Slide 14 - Obrigada
+  // Slide 9 - Obrigada
   {
-    id: 14,
+    id: 9,
     title: "Obrigada!",
     subtitle: "Perguntas?",
     content: <div className="flex flex-col items-center gap-8 animate-fade-in">
