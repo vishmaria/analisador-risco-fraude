@@ -1,49 +1,24 @@
 import { useState } from "react";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Shield, 
-  Database, 
-  Cpu, 
-  MessageSquare, 
-  GitBranch, 
-  BarChart3, 
-  AlertTriangle,
-  CheckCircle,
-  ExternalLink,
-  Home,
-  TrendingUp,
-  Users,
-  DollarSign,
-  Clock,
-  Eye,
-  Zap,
-  Lock,
-  Target
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Shield, Database, Cpu, MessageSquare, GitBranch, BarChart3, AlertTriangle, CheckCircle, ExternalLink, Home, TrendingUp, Users, DollarSign, Clock, Eye, Zap, Lock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
-
 interface Slide {
   id: number;
   title: string;
   subtitle?: string;
   content: React.ReactNode;
 }
-
 const Presentation = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides: Slide[] = [
-    // Slide 1 - Capa
-    {
-      id: 1,
-      title: "Analisador de Risco de Fraude",
-      subtitle: "Prova de Conceito (PoC)",
-      content: (
-        <div className="flex flex-col items-center gap-8 animate-fade-in">
+  // Slide 1 - Capa
+  {
+    id: 1,
+    title: "Analisador de Risco de Fraude",
+    subtitle: "Prova de Conceito (PoC)",
+    content: <div className="flex flex-col items-center gap-8 animate-fade-in">
           <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-xl">
             <Shield className="w-14 h-14 text-white" />
           </div>
@@ -60,21 +35,19 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 2 - Cenário de Fraudes no Brasil
-    {
-      id: 2,
-      title: "O Cenário das Fraudes Financeiras",
-      subtitle: "Por que precisamos agir agora?",
-      content: (
-        <div className="space-y-8 animate-fade-in">
+  },
+  // Slide 2 - Cenário de Fraudes no Brasil
+  {
+    id: 2,
+    title: "O Cenário das Fraudes Financeiras",
+    subtitle: "Por que precisamos agir agora?",
+    content: <div className="space-y-8 animate-fade-in">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-red-100 flex items-center justify-center mb-4">
                 <DollarSign className="w-8 h-8 text-red-600" />
               </div>
-              <p className="text-3xl font-bold text-slate-800">R$ 2,5 bi</p>
+              <p className="text-3xl font-bold text-slate-800">R$ 29 bi</p>
               <p className="text-sm text-slate-500 mt-2">Perdas anuais estimadas com fraudes digitais no Brasil</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg text-center">
@@ -98,15 +71,13 @@ const Presentation = () => {
             </p>
           </div>
         </div>
-      ),
-    },
-    // Slide 3 - Impacto nas Empresas
-    {
-      id: 3,
-      title: "O Impacto nas Empresas",
-      subtitle: "Muito além do prejuízo financeiro",
-      content: (
-        <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+  },
+  // Slide 3 - Impacto nas Empresas
+  {
+    id: 3,
+    title: "O Impacto nas Empresas",
+    subtitle: "Muito além do prejuízo financeiro",
+    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
           <div className="space-y-4">
             <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
               <div className="flex items-center gap-3 mb-3">
@@ -156,15 +127,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 4 - Nossa Proposta de Valor
-    {
-      id: 4,
-      title: "Nossa Proposta de Valor",
-      subtitle: "Inteligência Artificial a favor da segurança",
-      content: (
-        <div className="space-y-8 animate-fade-in">
+  },
+  // Slide 4 - Nossa Proposta de Valor
+  {
+    id: 4,
+    title: "Nossa Proposta de Valor",
+    subtitle: "Inteligência Artificial a favor da segurança",
+    content: <div className="space-y-8 animate-fade-in">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 shadow-lg text-center">
               <div className="w-16 h-16 mx-auto rounded-full bg-blue-600 flex items-center justify-center mb-4">
@@ -194,15 +163,13 @@ const Presentation = () => {
             </p>
           </div>
         </div>
-      ),
-    },
-    // Slide 5 - Diferencial Competitivo
-    {
-      id: 5,
-      title: "Por que este Projeto?",
-      subtitle: "Diferenciais da nossa solução",
-      content: (
-        <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+  },
+  // Slide 5 - Diferencial Competitivo
+  {
+    id: 5,
+    title: "Por que este Projeto?",
+    subtitle: "Diferenciais da nossa solução",
+    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-green-600" />
@@ -244,15 +211,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 6 - Dataset
-    {
-      id: 6,
-      title: "Base de Dados",
-      subtitle: "Fundamento sólido para decisões confiáveis",
-      content: (
-        <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+  },
+  // Slide 6 - Dataset
+  {
+    id: 6,
+    title: "Base de Dados",
+    subtitle: "Fundamento sólido para decisões confiáveis",
+    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
@@ -303,15 +268,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 7 - Arquitetura (Simplificada)
-    {
-      id: 7,
-      title: "Como Funciona",
-      subtitle: "Visão geral da arquitetura",
-      content: (
-        <div className="space-y-8 animate-fade-in">
+  },
+  // Slide 7 - Arquitetura (Simplificada)
+  {
+    id: 7,
+    title: "Como Funciona",
+    subtitle: "Visão geral da arquitetura",
+    content: <div className="space-y-8 animate-fade-in">
           <div className="grid md:grid-cols-4 gap-4">
             <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg text-center">
               <div className="w-12 h-12 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-3">
@@ -351,15 +314,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 8 - Pipeline n8n (Técnico)
-    {
-      id: 8,
-      title: "Pipeline de Processamento",
-      subtitle: "Workflow n8n Implementado",
-      content: (
-        <div className="space-y-6 animate-fade-in">
+  },
+  // Slide 8 - Pipeline n8n (Técnico)
+  {
+    id: 8,
+    title: "Pipeline de Processamento",
+    subtitle: "Workflow n8n Implementado",
+    content: <div className="space-y-6 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
               <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
@@ -400,15 +361,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 9 - Backend Python
-    {
-      id: 9,
-      title: "Serviço de Predição",
-      subtitle: "Backend Python + Docker",
-      content: (
-        <div className="space-y-6 animate-fade-in">
+  },
+  // Slide 9 - Backend Python
+  {
+    id: 9,
+    title: "Serviço de Predição",
+    subtitle: "Backend Python + Docker",
+    content: <div className="space-y-6 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-lg">
@@ -445,26 +404,32 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 10 - Modelagem ML
-    {
-      id: 10,
-      title: "Modelagem Machine Learning",
-      subtitle: "Comparativo de Modelos",
-      content: (
-        <div className="space-y-6 animate-fade-in">
+  },
+  // Slide 10 - Modelagem ML
+  {
+    id: 10,
+    title: "Modelagem Machine Learning",
+    subtitle: "Comparativo de Modelos",
+    content: <div className="space-y-6 animate-fade-in">
           <div className="grid md:grid-cols-4 gap-4">
-            {[
-              { name: "Logistic", auc: 0.82, recall: 0.72 },
-              { name: "Random Forest", auc: 0.90, recall: 0.80 },
-              { name: "XGBoost", auc: 0.92, recall: 0.83 },
-              { name: "LightGBM ⭐", auc: 0.93, recall: 0.85, selected: true },
-            ].map((model) => (
-              <div 
-                key={model.name}
-                className={`p-4 rounded-xl border shadow-lg ${model.selected ? 'bg-blue-50 border-blue-300' : 'bg-white border-slate-200'}`}
-              >
+            {[{
+          name: "Logistic",
+          auc: 0.82,
+          recall: 0.72
+        }, {
+          name: "Random Forest",
+          auc: 0.90,
+          recall: 0.80
+        }, {
+          name: "XGBoost",
+          auc: 0.92,
+          recall: 0.83
+        }, {
+          name: "LightGBM ⭐",
+          auc: 0.93,
+          recall: 0.85,
+          selected: true
+        }].map(model => <div key={model.name} className={`p-4 rounded-xl border shadow-lg ${model.selected ? 'bg-blue-50 border-blue-300' : 'bg-white border-slate-200'}`}>
                 <h4 className="font-semibold text-sm text-slate-800 mb-3">{model.name}</h4>
                 <div className="space-y-2">
                   <div>
@@ -482,8 +447,7 @@ const Presentation = () => {
                     <Progress value={model.recall * 100} className="h-2" />
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-lg">
             <h4 className="font-semibold text-slate-800 mb-3">Metodologia</h4>
@@ -496,15 +460,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 11 - Interface Implementada
-    {
-      id: 11,
-      title: "Interface Implementada",
-      subtitle: "Funcionalidades Disponíveis no PoC",
-      content: (
-        <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
+  },
+  // Slide 11 - Interface Implementada
+  {
+    id: 11,
+    title: "Interface Implementada",
+    subtitle: "Funcionalidades Disponíveis no PoC",
+    content: <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
           <div className="space-y-4">
             <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-lg">
               <div className="flex items-center gap-3 mb-3">
@@ -564,15 +526,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 12 - Métricas
-    {
-      id: 12,
-      title: "Resultados da Validação",
-      subtitle: "Métricas do Modelo Final",
-      content: (
-        <div className="space-y-6 animate-fade-in">
+  },
+  // Slide 12 - Métricas
+  {
+    id: 12,
+    title: "Resultados da Validação",
+    subtitle: "Métricas do Modelo Final",
+    content: <div className="space-y-6 animate-fade-in">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 shadow-lg">
               <div className="flex items-center gap-2 mb-2">
@@ -616,15 +576,13 @@ const Presentation = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    // Slide 13 - Conclusão
-    {
-      id: 13,
-      title: "Conclusão e Próximos Passos",
-      subtitle: "Roadmap do Projeto",
-      content: (
-        <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+  },
+  // Slide 13 - Conclusão
+  {
+    id: 13,
+    title: "Conclusão e Próximos Passos",
+    subtitle: "Roadmap do Projeto",
+    content: <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-green-600" />
@@ -682,15 +640,13 @@ const Presentation = () => {
             </ul>
           </div>
         </div>
-      ),
-    },
-    // Slide 14 - Obrigada
-    {
-      id: 14,
-      title: "Obrigada!",
-      subtitle: "Perguntas?",
-      content: (
-        <div className="flex flex-col items-center gap-8 animate-fade-in">
+  },
+  // Slide 14 - Obrigada
+  {
+    id: 14,
+    title: "Obrigada!",
+    subtitle: "Perguntas?",
+    content: <div className="flex flex-col items-center gap-8 animate-fade-in">
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-xl">
             <Shield className="w-12 h-12 text-white" />
           </div>
@@ -699,58 +655,36 @@ const Presentation = () => {
               Maria Fernanda Bittelbrunn Toniasso
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a 
-                href="https://huggingface.co" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-sm text-slate-700"
-              >
+              <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-sm text-slate-700">
                 <ExternalLink className="w-4 h-4" />
                 Dataset HuggingFace
               </a>
             </div>
           </div>
-          <Button
-            onClick={() => navigate("/")}
-            variant="outline"
-            size="lg"
-            className="mt-8 border-slate-300 text-slate-700 hover:bg-slate-100"
-          >
+          <Button onClick={() => navigate("/")} variant="outline" size="lg" className="mt-8 border-slate-300 text-slate-700 hover:bg-slate-100">
             <Home className="w-4 h-4 mr-2" />
             Voltar para o Sistema
           </Button>
         </div>
-      ),
-    },
-  ];
-
+  }];
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
     }
   };
-
   const prevSlide = () => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
     }
   };
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-4 py-3 shadow-sm">
         <div className="container mx-auto flex items-center justify-between">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => navigate("/")}
-            className="gap-2 text-slate-600 hover:text-slate-800"
-          >
+          <Button variant="ghost" size="sm" onClick={() => navigate("/")} className="gap-2 text-slate-600 hover:text-slate-800">
             <Home className="w-4 h-4" />
             <span className="hidden sm:inline">Voltar</span>
           </Button>
@@ -771,11 +705,9 @@ const Presentation = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-slate-800">
               {slides[currentSlide].title}
             </h1>
-            {slides[currentSlide].subtitle && (
-              <p className="text-lg text-slate-500">
+            {slides[currentSlide].subtitle && <p className="text-lg text-slate-500">
                 {slides[currentSlide].subtitle}
-              </p>
-            )}
+              </p>}
           </div>
 
           {/* Content */}
@@ -790,44 +722,22 @@ const Presentation = () => {
         <div className="container mx-auto flex flex-col gap-4">
           {/* Slide indicators */}
           <div className="flex justify-center gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide
-                    ? "bg-blue-600 w-6"
-                    : "bg-slate-300 hover:bg-slate-400"
-                }`}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
+            {slides.map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "bg-blue-600 w-6" : "bg-slate-300 hover:bg-slate-400"}`} aria-label={`Ir para slide ${index + 1}`} />)}
           </div>
 
           {/* Navigation buttons */}
           <div className="flex justify-center gap-4">
-            <Button
-              variant="outline"
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className="gap-2 border-slate-300 text-slate-700"
-            >
+            <Button variant="outline" onClick={prevSlide} disabled={currentSlide === 0} className="gap-2 border-slate-300 text-slate-700">
               <ChevronLeft className="w-4 h-4" />
               Anterior
             </Button>
-            <Button
-              onClick={nextSlide}
-              disabled={currentSlide === slides.length - 1}
-              className="gap-2 bg-blue-600 hover:bg-blue-700 text-white"
-            >
+            <Button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className="gap-2 bg-blue-600 hover:bg-blue-700 text-white">
               Próximo
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Presentation;
