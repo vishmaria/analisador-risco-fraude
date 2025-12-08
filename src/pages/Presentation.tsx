@@ -51,10 +51,13 @@ const Presentation = () => {
             <p className="text-xl text-slate-600">Sistema de Detecção em Tempo Real</p>
             <p className="text-lg text-slate-500">Baseado em Machine Learning + LLM</p>
           </div>
-          <div className="mt-8 px-6 py-3 rounded-full bg-slate-100 border border-slate-200">
-            <p className="text-sm text-slate-600">Maria Fernanda Bittelbrunn Toniasso</p>
-          <div className="mt-8 px-6 py-3 rounded-full bg-slate-100 border border-slate-200"></div>
-            <p className="text-sm text-slate-600">Matheus de Oliveira Saldanha</p>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <div className="px-6 py-3 rounded-full bg-slate-100 border border-slate-200">
+              <p className="text-sm text-slate-600">Maria Fernanda Bittelbrunn Toniasso</p>
+            </div>
+            <div className="px-6 py-3 rounded-full bg-slate-100 border border-slate-200">
+              <p className="text-sm text-slate-600">Matheus de Oliveira Saldanha</p>
+            </div>
           </div>
         </div>
       ),
